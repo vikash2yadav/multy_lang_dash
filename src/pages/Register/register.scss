@@ -1,0 +1,123 @@
+body{
+    background-color: #eff0f0;
+    font-family: 'roboto';
+}
+
+.main {
+    max-width: 1366px;
+    margin: 3% 10%;
+    height: 100%;
+
+    .container {
+        width: 100%;
+        background-color: white;
+        display: flex;
+        color: black;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+        .firstDiv {
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 70%;
+            height: 500px;
+            background: linear-gradient(#08e6b6, #a3abd7);
+
+            h1 {
+                padding: 10px;
+                font-size: 28px;
+                font-weight: bold;
+        }
+            p{
+                font-size: 15px;
+                font-family: 'roboto';
+
+            }
+
+            .link {
+                margin: 10px;
+                color: black;
+                background-color:white;
+                font-size: 12px;
+                border-radius: 20px;
+                padding: 10px;
+                width: 25%;
+                text-align: center;
+                font-weight: 600;
+            }
+
+        }
+
+        .secondDiv {
+            background-color: transparent;
+            height: 500px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            align-items: center;
+
+            h1 {
+                padding: 5px;
+                font-weight: bold;
+                font-size: 28px;
+                font-family: sans-serif;
+            }
+
+            .links {
+                padding: 10px;
+                display: flex;
+                justify-content: space-evenly;
+
+                a {
+                    color: #06ab87;
+                }
+            }
+
+            p {
+                padding: 10px;
+                font-size: 12px;
+            }
+
+            .form {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                margin: 20px 0px;
+
+                .textbox{
+                    margin-bottom: 10px;
+                    font-weight: 300;
+                }
+            }
+
+            button{
+                margin: 10px;
+                color: white;
+                background: linear-gradient(#5aebcc, #4b61dc);
+                border-radius: 20px;
+                padding: 10px;
+                width: 20%;
+                font-weight: 100;
+                font-size: 14px;
+                font-family: 'Times New Roman', Times, serif;
+            }
+
+            .logindiv{
+                margin-top: 10px;
+                font-size: 14px;
+                font-weight: 400;
+                color: #0c0c1d;
+
+                span {
+                    font-weight: 700;
+                    color: #676eba;
+                }
+            }
+        }
+    }
+}

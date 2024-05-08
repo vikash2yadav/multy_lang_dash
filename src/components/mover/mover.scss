@@ -1,0 +1,153 @@
+.box {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: rgb(209, 128, 128);
+    position: relative;
+    animation-name: example;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+    z-index: -999;
+      
+  }
+
+  .box2 {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: rgb(209, 128, 128);
+    position: relative;
+    animation-name: example2;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    z-index: -999;
+  }
+
+
+  .box3 {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: rgb(209, 128, 128);
+    position: relative;
+    animation-name: example3;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+    z-index: -999;
+      
+  }
+
+  .box4 {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: rgb(209, 128, 128);
+    position: relative;
+    animation-name: example4;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+    z-index: -999;
+      
+  }
+
+  .box5 {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: rgb(209, 128, 128);
+    position: relative;
+    animation-name: example5;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+    z-index: -999;
+      
+  }
+
+  .box6 {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: rgb(209, 128, 128);
+    position: relative;
+    animation-name: example6;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+    z-index: -999;
+      
+  }
+
+  .box7 {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: rgb(209, 128, 128);
+    position: relative;
+    animation-name: example7;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+    z-index: -999;
+      
+  }
+
+  .box8 {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: rgb(209, 128, 128);
+    position: relative;
+    animation-name: example8;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+    z-index: -999;
+      
+  }
+
+
+  @keyframes example {
+    0%   {background-color:rgb(53, 173, 67); left:300px; top:300px;}
+    25%  {background-color:rgb(47, 47, 203); left:200px; top:20px;}
+    50%  {background-color:rgb(218, 25, 182); left:400px; top:400px;}
+    75%  {background-color:green; left:10px; top:100px;}
+    100% {background-color:red; left:200px; top:300px;}
+  }
+
+
+  @keyframes example2 {
+    0%   {background-color:rgb(8, 230, 38); left:40px; top:300px;}
+    25%  {background-color:rgb(221, 10, 48); left:60px; top:40px;}
+    50%  {background-color:blue; left:90px; top:200px;}
+    75%  {background-color:rgb(2, 91, 2); left:50px; top:500px;}
+    100% {background-color:red; left:100px; top:50px;}
+  }
+
+  @keyframes example3 {
+    0%   {background-color:rgb(7, 152, 27); left:600px; top:400px;}
+    25%  {background-color:rgb(221, 10, 48); left:80px; top:40px;}
+    50%  {background-color:rgb(140, 140, 144); left:30px; top:200px;}
+    75%  {background-color:rgb(12, 212, 12); left:50px; top:10px;}
+    100% {background-color:rgb(35, 22, 22); left:100px; top:500px;}
+  }
+
+  @keyframes example4 {
+    0%   {background-color:rgb(8, 230, 38); left:50px; top:300px;}
+    25%  {background-color:rgb(221, 10, 48); left:60px; top:440px;}
+    50%  {background-color:rgb(29, 211, 29); left:90px; top:220px;}
+    75%  {background-color:rgb(2, 91, 2); left:50px; top:507px;}
+    100% {background-color:rgb(112, 34, 207); left:600px; top:40px;}
+  }
+
+  @keyframes example5 {
+    0%   {background-color:rgb(8, 230, 38); left:200px; top:560px;}
+    25%  {background-color:rgb(221, 10, 48); left:30px; top:40px;}
+    50%  {background-color:rgb(29, 211, 29); left:100px; top:220px;}
+    75%  {background-color:rgb(2, 91, 2); left:50px; top:507px;}
+    100% {background-color:rgb(112, 34, 207); left:600px; top:40px;}
+  }
