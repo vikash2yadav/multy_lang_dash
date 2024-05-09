@@ -62,9 +62,10 @@
             align-items: center;
             flex-direction: column;
             margin: 5px;
+            text-align: left;
 
             .textbox {
-                margin-bottom: 5px;
+                margin-bottom: 10px;
                 font-weight: 300;
             }
             button {

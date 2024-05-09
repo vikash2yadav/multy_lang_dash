@@ -22,9 +22,9 @@ const PassInput = (props) => {
         type={props.type}
         placeholder={props.placeholder}
         startDecorator={props.Key}
-        // value={value}
-        autoComplete='off'
-        onChange={(event) => setValue(event.target.value)}
+        value={props.value}
+        name={props.name}
+        onChange={props.onChange}
       />
       {
         props.password ? (
