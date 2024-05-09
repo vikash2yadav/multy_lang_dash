@@ -26,7 +26,7 @@ const Login = () => {
               />
               <div className='registerdiv'>
                 <span>
-                  <Link to="#">Forgot Password?</Link>
+                  <Link to="/forgot_password">Forgot Password?</Link>
                 </span>
               </div>
             </div>

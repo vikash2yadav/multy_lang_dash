@@ -1,13 +1,11 @@
+import TextField from '@mui/material/TextField';
 
-// import { TextField } from '@mui/joy'
-// import React from 'react'
+const InputC = (props) => {
+    return (
+        <>
+            <TextField label={props.label} variant={props.variant} />
+        </>
+    )
+}
 
-// const InputC = () => {
-//   return (
-//     <>
-//     <TextField variant="contained" />
-//     </>
-//   )
-// }
-
-// export default InputC
+export default InputC

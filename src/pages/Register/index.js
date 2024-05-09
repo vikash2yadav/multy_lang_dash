@@ -8,10 +8,11 @@ import { MdKey } from "react-icons/md";
 import { FaUser } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import Mover from '../../components/mover';
+import InputC from '../../components/InputC';
 
 const Register = () => {
     return (
-        <div className = "main" >
+        <div className="main" >
             <div className='container'>
                 <div className='firstDiv'>
                     <h1>Welcome back !</h1>
@@ -30,18 +31,13 @@ const Register = () => {
                     <p>Fill form and create account. </p>
                     <div className='form'>
 
+
                         <div className='textbox'>
-                            <PassInput type="email"
-                                size="md"
-                                Key={<FaUser />} />
+                            <InputC variant="standard" label="Email" />
                         </div>
 
                         <div className='textbox' >
-                            <PassInput
-                                size="md"
-                                password="password"
-                                type="password"
-                                Key={<MdKey />} />
+                            <InputC variant="standard" label="Password" />
                         </div>
 
 
@@ -54,7 +50,7 @@ const Register = () => {
                     </div>
                 </div>
             </div>
-            </div>
+        </div>
     )
 }
 
