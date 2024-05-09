@@ -1,0 +1,34 @@
+.sideboxcontainer{
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;    
+        min-height: 500px;
+        background: linear-gradient(#08e6b6, #a3abd7);
+        padding: 20px 40px;
+        text-align: center;
+
+        h1 {
+            padding: 10px;
+            font-size: 28px;
+            font-weight: bold;
+    }
+        p{
+            font-size: 15px;
+            font-family: 'roboto';
+
+        }
+
+        .link {
+            margin: 30px;
+            color: black;
+            background-color:white;
+            font-size: 12px;
+            border-radius: 20px;
+            min-width: 150px;
+            padding: 10px;
+            font-weight: 600;
+        }
+        }

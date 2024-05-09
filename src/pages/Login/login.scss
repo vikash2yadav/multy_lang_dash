@@ -1,102 +1,125 @@
-.mainLogin {
-    max-width: 1366px;
+.logincontainer {
     margin: 3% 10%;
-    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    text-align: center;
+    min-width: 300px;
+    min-height: 80vh;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    overflow: hidden;
 
-    .containerLogin {
-        width: 100%; 
-        background-color: white;
+    .firstDivLogin {
         display: flex;
-        color: #0c0c1d;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        
-        .firstDivLogin {
+        justify-content: center;
+        flex-basis: 50%;
+        min-height: 500px;
+        align-items: center;
+        flex-direction: column;
+        background-color: white;
+
+
+        h1 {
+            font-size: 26px;
+            padding: 10px;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+
+        p {
+            font-size: 12px;
+        }
+
+        .form {
             display: flex;
-            justify-content: center;
-            align-items: center;
             flex-direction: column;
-            width: 180%;
+            margin: 20px 0px;
+
+            .textbox {
+                margin-bottom: 5px;
+                font-weight: 300;
+            }
+
+            span {
+                font-size: 14px;
+                font-weight: 400;
+                color:blue;
+                font-weight: 400;
+                text-align: left;
+            }
+
+            button {
+                margin-top: 20px;
+                font-size: 14px;
+                border-radius: 20px;
+                padding: 10px;
+                width: 100%;
+                font-weight: 600;
+                background: linear-gradient(#5aebcc, #4b61dc);
+                color: white;
+            }
+
+            .logindiv {
+                margin-top: 30px;
+            }
+        }
+    }
+
+    .secondDivLogin {
+        background-color: white;
+        overflow: hidden;
+        display: flex;
+        color: black;
+        flex-basis: 50%;
+        min-width: 300px;
+        min-height: 500px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+
+        h1 {
+            padding: 5px;
+            font-weight: bold;
+            font-size: 28px;
+        }
+
+        p {
+            font-size: 15px;
+        }
+
+        .link {
+            margin: 10px;
+            color: black;
+            background-color: white;
+            font-size: 12px;
+            border-radius: 20px;
+            padding: 10px;
+            width: 25%;
+            font-weight: 600;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+
+        .firstDivLogin {
+            flex-basis: 100%;
 
             h1 {
-                font-size: 30px;
-                padding: 10px;
-                font-weight: bold;
-                font-family: sans-serif;
-
+                font-size: 22px;
             }
-            p{
-                font-size: 12px;
-            }
-            .form {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                margin: 20px 0px;
-
-                .textbox{
-                    margin-bottom: 5px;
-                    font-weight: 300;
-                }
-                
-                button {
-                    margin-top: 20px;
-                    font-size: 14px;
-                    border-radius: 20px;
-                    padding: 10px;  
-                    width: 40%;
-                    font-weight: 600;
-                    background: linear-gradient(#5aebcc, #4b61dc);
-                    color: white;
-                }
-            }
-            .registerdiv{
-                margin-top: 5px;
-                font-size: 12px;
-                font-weight: 400;
-                color: #0c0c1d;
-
-                span {
-                    font-weight: 400;
-                    color: #676eba;
-                }
-            }
-
         }
 
         .secondDivLogin {
-            background-color: transparent;
-            color: white;
-            height: 500px;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            text-align: center;
-            flex-direction: column;
-            align-items: center;
-            background: linear-gradient(#08e6b6, #a3abd7);
+            display: none;
+        }
+    }
 
-            h1 {
-                padding: 5px;
-                font-weight: bold;
-                font-size: 28px;
-            }
-
-            p{
-                font-size: 15px;
-            }
-
-            .link {
-                margin: 10px;
-                color: black;
-                background-color:white;
-                font-size: 12px;
-                border-radius: 20px;
-                padding: 10px;
-                width: 25%;
-                font-weight: 600;
-            }
-
+    @media screen and (max-width: 500px) {
+        .logincontainer {
+            // Additional styles for smaller screens if needed
         }
     }
 }
