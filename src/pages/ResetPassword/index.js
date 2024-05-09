@@ -6,38 +6,36 @@ import "./reset_password.scss"
 
 const ResetPassword = () => {
     return (
-        <div className="mainLogin">
-            <div className="containerLogin">
-                <div className="firstDivLogin">
-                    <h1>Create New Password</h1>
-                    <p>Now you can create new password</p>
+        <div className="resetpasswordcontainer">
+            <div className="firstbox">
+                <h1>Create New Password</h1>
+                <p>Now, you can create new password</p>
 
-                    <form className="form">
-                        <div className="textbox">
-                            <PassInput type="password" size="md" Key={<MdKey />} />
-                        </div>
+                <form className="form">
+                    <div className="textbox">
+                        <PassInput type="password" size="md" Key={<MdKey />} />
+                    </div>
 
-                        <div className="textbox">
-                            <PassInput
-                                size="md"
-                                type="password"
-                                Key={<MdKey />}
-                            />
-                        </div>
-                        <button className='button'>Set Password</button>
-                        <div className='logindiv'>
-                            <span>
-                                <Link to="/"><u>Back</u></Link>
-                            </span>
-                        </div>
-                    </form>
+                    <div className="textbox">
+                        <PassInput
+                            size="md"
+                            type="password"
+                            Key={<MdKey />}
+                        />
+                    </div>
+                    <button className='button'>Set Password</button>
+                    <div className='logindiv'>
+                        <span>
+                            <Link to="/"><u>Back</u></Link>
+                        </span>
+                    </div>
+                </form>
 
-                </div>
+            </div>
 
-                <div className="secondDivLogin">
-                    <h1>Reset Password?</h1>
-                    <p>Here you can change your password.</p>
-                </div>
+            <div className="secondbox">
+                <h1>Reset Password?</h1>
+                <p>Here you can change your password.</p>
             </div>
         </div>
     )
