@@ -30,7 +30,12 @@ const Login = () => {
                 </span>
               </div>
             </div>
-          <button>Sign In</button>
+            <button>Sign In</button>
+            <div className='logindiv'>
+              <span>
+                <Link to="/"><u>Back</u></Link>
+              </span>
+            </div>
           </form>
 
         </div>
