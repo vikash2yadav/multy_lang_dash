@@ -103,3 +103,5 @@ export async function signUpApi(data) {
         throw error;
     }
 }
+
+

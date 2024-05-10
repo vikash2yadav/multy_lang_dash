@@ -6,7 +6,7 @@ import { useEffect } from "react";
 function App() {
   let location = useLocation();
   let navigate = useNavigate();
-  var allowPath = ["/login", "/register", "/forgot_password", "/otp-verification", "/reset_password"];
+  var allowPath = ["/login", "/register", "/forgot_password", "/reset_password" ];
 
   useEffect(() => {
     if (localStorage.getItem("authorization")) {

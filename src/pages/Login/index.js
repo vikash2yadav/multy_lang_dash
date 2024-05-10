@@ -4,7 +4,7 @@ import { MdKey } from "react-icons/md";
 import { FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./login.scss";
-import SideBox from "../../components/SideBox"
+import SnackBar from "../../components/SnackBar"
 import { useFormik } from "formik";
 import { signInInitialValues, signInSchema } from "./Schema";
 import { signInApi } from "../../Apis/users"
@@ -32,61 +32,74 @@ const Login = () => {
     },
   })
 
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
+
   return (
-    <div className="logincontainer">
-      <div className="firstDivLogin">
-        <h1>Login to your account</h1>
-        <p>Login using those networks</p>
+    <div className="mainlogin">
+      <div className="logincontainer">
+        <div className="firstDivLogin">
+          <h1>Login to your account</h1>
+          <p>Login using those networks</p>
 
-        <form className="form" onSubmit={formik.handleSubmit}>
-          <div className="textbox">
-            <PassInput type="email" size="md" Key={<FaUser />}
-              name="email"
-              onChange={formik.handleChange}
-              value={formik.values.email} />
-            {formik.errors.email && formik.touched.email ? (
-              <div className='text-red-600 text-xs'>{formik.errors.email}</div>
-            ) : null}
-          </div>
+          <form className="form" onSubmit={formik.handleSubmit}>
+            <div className="textbox">
+              <PassInput type="email" size="md" Key={<FaUser />}
+                name="email"
+                onChange={formik.handleChange}
+                value={formik.values.email} />
+              {formik.errors.email && formik.touched.email ? (
+                <div className='text-red-600 text-xs'>{formik.errors.email}</div>
+              ) : null}
+            </div>
 
-          <div className="textbox">
-            <PassInput
-              size="md"
-              type="password"
-              Key={<MdKey />}
-              name="password"
-              onChange={formik.handleChange}
-              value={formik.values.password}
-            />
-            {formik.errors.password && formik.touched.password ? (
-              <div className='text-red-600 text-xs'>{formik.errors.password}</div>
-            ) : null}
-          </div>
-
-
-          <span>
-            <Link to="/forgot_password">Forgot Password?</Link>
-          </span>
+            <div className="textbox">
+              <PassInput
+                size="md"
+                type="password"
+                Key={<MdKey />}
+                name="password"
+                onChange={formik.handleChange}
+                value={formik.values.password}
+              />
+              {formik.errors.password && formik.touched.password ? (
+                <div className='text-red-600 text-xs'>{formik.errors.password}</div>
+              ) : null}
+            </div>
 
 
-          <button>Sign In</button>
-
-          <div className='logindiv'>
             <span>
-              <Link to="/"><u>Back</u></Link>
+              <Link to="/forgot_password">Forgot Password?</Link>
             </span>
-          </div>
-        </form>
+
+
+            <button>Sign In</button>
+
+            <div className='logindiv'>
+              <span>
+                <Link to="/"><u>Back</u></Link>
+              </span>
+            </div>
+          </form>
+        </div>
+
+        <div className="secondDivLogin">
+        </div>
       </div>
 
-      <div className="secondDivLogin">
-        <SideBox to="/register"
-          tolabel="Sign Up"
-          title="New Here !"
-          desc="you can sign up and use our features."
-        />
+      {status ? (
+        <SnackBar handleClose={handleClose} variant="filled" severity="success" sx={{ width: '100%' }} open={open} message={message  || 'Check DB connection'} />
+      ) :
+        (
+          <SnackBar handleClose={handleClose} variant="filled" severity="error" sx={{ width: '100%' }} open={open} message={message || 'Check DB connection'} />
+        )
+      }
 
-      </div>
     </div>
   );
 };

@@ -1,5 +1,8 @@
+.mainlogin {
+    background-color: #7203a9   ;
+    padding: 2% 10%;
+
 .logincontainer {
-    margin: 3% 10%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,6 +10,7 @@
     text-align: center;
     min-width: 300px;
     min-height: 80vh;
+    border-radius: 30px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     overflow: hidden;
 
@@ -68,8 +72,11 @@
     }
 
     .secondDivLogin {
-        background-color: white;
+        // background-color: white;
+        background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz1h_-DHt_1j0BvXQcHrNCtwE8pxs5cbkMwA&s");
         overflow: hidden;
+        background-repeat: no-repeat;
+        background-size: cover;
         display: flex;
         color: black;
         flex-basis: 50%;
@@ -123,4 +130,5 @@
             // Additional styles for smaller screens if needed
         }
     }
+}
 }

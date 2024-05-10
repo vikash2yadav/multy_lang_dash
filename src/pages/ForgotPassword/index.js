@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom'
 import { useFormik } from 'formik'
 import { forgotPasswordInitialValues, forgotPasswordSchema, checkOtpInitialValues, checkOtpSchema } from "./Schema"
 import { forgotPasswordApi, checkOtpApi } from "../../Apis/users"
+import SnackBar from '../../components/SnackBar';
 
 const ForgotPassword = () => {
     const navigate = useNavigate();
@@ -39,7 +40,11 @@ const ForgotPassword = () => {
             if (data.status === 200) {
                 setOpen(true);
                 setStatus(true);
-                setMessage(data.data.message)
+                setMessage(data.data.message);
+                localStorage.setItem("resetToken", data.data.data.user_id)
+                setTimeout(() => {
+                    navigate('/reset_password')
+                }, 1000)
             } else {
                 setOpen(true);
                 setStatus(false);
@@ -48,57 +53,78 @@ const ForgotPassword = () => {
         },
     })
 
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        setOpen(false);
+    };
+
 
     return (
-        <div className="forgotpasswordcontainer" >
-            <div className='firstDiv'>
-                <SideBox to="/forgot_password"
+        <div className="mainforgot">
+            <div className="forgotpasswordcontainer" >
+                <div className='firstDiv'>
+                    {/* <SideBox to="/forgot_password"
                     title="Send Otp !"
                     desc="you can send otp and reset your password."
-                />
-            </div>
-            <div className='secondDiv'>
-                <h1>Forgot Password</h1>
-                <p>Enter email and we will sent otp. </p>
-                <form className='emailform' onSubmit={formik.handleSubmit}>
-                    <div className='textbox'>
-                        <InputC variant="standard" label="Email"
-                            name="email"
-                            onChange={formik.handleChange}
-                            value={formik.values.email} />
-                        {formik.errors.email && formik.touched.email ? (
-                            <div className='text-red-600 text-xs'>{formik.errors.email}</div>
-                        ) : null}
+                /> */}
+
+                </div>
+                <div className='secondDiv'>
+                    <h1>Forgot Password</h1>
+                    <p>Enter email and we will sent otp. </p>
+                    <form className='emailform' onSubmit={formik.handleSubmit}>
+                        <div className='textbox'>
+                            <InputC variant="standard" label="Email"
+                                name="email"
+                                onChange={formik.handleChange}
+                                value={formik.values.email} />
+                            {formik.errors.email && formik.touched.email ? (
+                                <div className='text-red-600 text-xs'>{formik.errors.email}</div>
+                            ) : null}
+                        </div>
+
+                        <button>Send OTP</button>
+                    </form>
+
+                    <form className='emailform' onSubmit={formik2.handleSubmit}>
+
+                        <div className='textbox'>
+                            <InputC variant="standard" label="Otp"
+                                name="otp"
+                                onChange={formik2.handleChange}
+                                value={formik2.values.otp}
+                            />
+                            {formik2.errors.otp && formik2.touched.otp ? (
+                                <div className='text-red-600 text-xs'>{formik2.errors.otp}</div>
+                            ) : null}
+                        </div>
+
+                        <button>Verify</button>
+                    </form>
+
+                    <div className='logindiv'>
+                        <span>
+                            <Link to="/register">Sign Up</Link>
+                        </span>&nbsp; | &nbsp;
+                        <span>
+                            <Link to="/login">Sign In</Link>
+                        </span>
                     </div>
-
-                <button>Send OTP</button>
-                </form>
-
-                <form className='emailform'  onSubmit={formik2.handleSubmit}>
-
-                    <div className='textbox'>
-                        <InputC variant="standard" label="Otp" 
-                         name="otp"
-                         onChange={formik2.handleChange}
-                         value={formik2.values.otp} 
-                         />
-                               {formik2.errors.otp && formik2.touched.otp ? (
-                            <div className='text-red-600 text-xs'>{formik2.errors.otp}</div>
-                        ) : null}
-                    </div>
-
-                <button>Verify</button>
-                </form>
-
-                <div className='logindiv'>
-                    <span>
-                        <Link to="/register">Sign Up</Link>
-                    </span>&nbsp; | &nbsp;
-                    <span>
-                        <Link to="/login">Sign In</Link>
-                    </span>
                 </div>
             </div>
+
+
+            {status ? (
+                <SnackBar handleClose={handleClose} variant="filled" severity="success" sx={{ width: '100%' }} open={open} message={message} />
+            ) :
+                (
+                    <SnackBar handleClose={handleClose} variant="filled" severity="error" sx={{ width: '100%' }} open={open} message={message} />
+                )
+            }
+
         </div>
     )
 }

@@ -4,11 +4,11 @@ import { RiFacebookBoxFill } from "react-icons/ri";
 import { IoLogoInstagram } from "react-icons/io";
 import { IoLogoLinkedin } from "react-icons/io5";
 import InputC from '../../components/InputC';
-import SideBox from '../../components/SideBox';
 import { Link, useNavigate } from 'react-router-dom'
 import {signUpApi} from "../../Apis/users"
 import { useFormik } from 'formik';
 import {signUpSchema, signUpInitialValues} from "./Schema"
+import SnackBar from '../../components/SnackBar';
 
 const Register = () => {
     const navigate = useNavigate();
@@ -36,15 +36,24 @@ const Register = () => {
         },
     })
 
-    return (
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+          return;
+        }
+    
+        setOpen(false);
+      };
 
+    return (
+        <div className="mainregister">
         <div className="registercontainer" >
             <div className='firstDiv'>
-                <SideBox to="#"
+                {/* <SideBox to="#"
                     tolabel="About Us"
                     title="Welcome back !"
                     desc="you can sign up and use our features."
-                />
+                /> */}
+                
             </div>
 
             <div className='secondDiv'>
@@ -97,6 +106,16 @@ const Register = () => {
                 </div>
 
             </div>
+        </div>
+
+        {status ? (
+        <SnackBar handleClose={handleClose} variant="filled" severity="success" sx={{ width: '100%' }} open={open} message={message} />
+      ) :
+        (
+          <SnackBar handleClose={handleClose} variant="filled" severity="error" sx={{ width: '100%' }} open={open} message={message} />
+        )
+      }
+
         </div>
     )
 }
