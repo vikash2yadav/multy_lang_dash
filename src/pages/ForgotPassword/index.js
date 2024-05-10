@@ -2,18 +2,20 @@ import React, { useState } from 'react'
 import "./forgot_password.scss"
 import { Link } from 'react-router-dom'
 import InputC from '../../components/InputC';
-import SideBox from "../../components/SideBox"
 import { useNavigate } from 'react-router-dom'
 import { useFormik } from 'formik'
 import { forgotPasswordInitialValues, forgotPasswordSchema, checkOtpInitialValues, checkOtpSchema } from "./Schema"
 import { forgotPasswordApi, checkOtpApi } from "../../Apis/users"
 import SnackBar from '../../components/SnackBar';
+import { forgot } from '../../langs/en.js';
+import { forgotHN } from '../../langs/hn.js';
 
 const ForgotPassword = () => {
     const navigate = useNavigate();
     const [open, setOpen] = useState(false);
     const [message, setMessage] = useState(null);
     const [status, setStatus] = useState('');
+    const [language, setLanguage] = useState('hn');
 
     const formik = useFormik({
         initialValues: forgotPasswordInitialValues,
@@ -65,19 +67,16 @@ const ForgotPassword = () => {
     return (
         <div className="mainforgot">
             <div className="forgotpasswordcontainer" >
-                <div className='firstDiv'>
-                    {/* <SideBox to="/forgot_password"
-                    title="Send Otp !"
-                    desc="you can send otp and reset your password."
-                /> */}
+                <div className='firstDiv'></div>
 
-                </div>
                 <div className='secondDiv'>
-                    <h1>Forgot Password</h1>
-                    <p>Enter email and we will sent otp. </p>
+                    <h1>{language === 'en' ? forgot.title : forgotHN.title}</h1>
+                    <p>{language === 'en' ? forgot.desc : forgotHN.desc} </p>
+
                     <form className='emailform' onSubmit={formik.handleSubmit}>
                         <div className='textbox'>
-                            <InputC variant="standard" label="Email"
+                            <InputC variant="standard"
+                                label={language === 'en' ? forgot.placeholder.email : forgotHN.placeholder.email}
                                 name="email"
                                 onChange={formik.handleChange}
                                 value={formik.values.email} />
@@ -86,13 +85,13 @@ const ForgotPassword = () => {
                             ) : null}
                         </div>
 
-                        <button>Send OTP</button>
+                        <button>{language === 'en' ? forgot.sendBtn : forgotHN.sendBtn}</button>
                     </form>
 
                     <form className='emailform' onSubmit={formik2.handleSubmit}>
-
                         <div className='textbox'>
-                            <InputC variant="standard" label="Otp"
+                            <InputC variant="standard"
+                                label={language === 'en' ? forgot.placeholder.otp : forgotHN.placeholder.otp}
                                 name="otp"
                                 onChange={formik2.handleChange}
                                 value={formik2.values.otp}
@@ -102,15 +101,15 @@ const ForgotPassword = () => {
                             ) : null}
                         </div>
 
-                        <button>Verify</button>
+                        <button>{language === 'en' ? forgot.verifyBtn : forgotHN.verifyBtn}</button>
                     </form>
 
                     <div className='logindiv'>
                         <span>
-                            <Link to="/register">Sign Up</Link>
+                            <Link to="/register">{language === 'en' ? forgot.signUpLink : forgotHN.signUpLink}</Link>
                         </span>&nbsp; | &nbsp;
                         <span>
-                            <Link to="/login">Sign In</Link>
+                            <Link to="/login">{language === 'en' ? forgot.signInLink : forgotHN.signInLink}</Link>
                         </span>
                     </div>
                 </div>

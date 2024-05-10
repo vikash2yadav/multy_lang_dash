@@ -36,13 +36,6 @@ export const routes = [
     {
         key: "my_profile",
         displayName: "My Profile",
-        link: "/a",
-        showOnSideBar: true,
-        component: <SideBox />
-    },
-    {
-        key: "my_profile",
-        displayName: "My Profile",
         link: "/dashboard",
         showOnSideBar: true,
         component: <h1>Dashboard</h1>

@@ -1,6 +1,7 @@
 .mainlogin {
-    background-color: #7203a9   ;
-    padding: 2% 10%;
+    background-color: #e2d3ea   ;
+    padding: 5% 20%;
+    min-height: 100vh;
 
 .logincontainer {
     display: flex;
@@ -9,7 +10,6 @@
     flex-flow: row wrap;
     text-align: center;
     min-width: 300px;
-    min-height: 80vh;
     border-radius: 30px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     overflow: hidden;
@@ -18,7 +18,7 @@
         display: flex;
         justify-content: center;
         flex-basis: 50%;
-        min-height: 500px;
+        min-height: 400px;
         align-items: center;
         flex-direction: column;
         background-color: white;
@@ -73,15 +73,15 @@
 
     .secondDivLogin {
         // background-color: white;
-        background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz1h_-DHt_1j0BvXQcHrNCtwE8pxs5cbkMwA&s");
+        background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV3RU9kej_HXokhNQtUFAI8hd7Is_tkNwNPg&s");
         overflow: hidden;
         background-repeat: no-repeat;
         background-size: cover;
         display: flex;
         color: black;
         flex-basis: 50%;
-        min-width: 300px;
-        min-height: 500px;
+        // min-width: 300px;
+        min-height: 400px;
         display: flex;
         justify-content: center;
         text-align: center;
