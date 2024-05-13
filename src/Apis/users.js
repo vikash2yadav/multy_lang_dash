@@ -104,4 +104,14 @@ export async function signUpApi(data) {
     }
 }
 
+// get user info
+export async function getUserInfoApi(data) {
+    try {
+        const response = await callPostApi({ url: "user/sign_up", body: data });
+        return response;
+    } catch (error) {
+        throw error;
+    }
+}
+
 

@@ -11,6 +11,8 @@ import { signUpSchema, signUpInitialValues } from "./Schema"
 import SnackBar from '../../components/SnackBar';
 import { register } from '../../langs/en.js';
 import { registerHN } from '../../langs/hn.js';
+import { options } from '../../helper/helper'
+// import Selector from '../../components/Selector/index.js';
 
 const Register = () => {
     const navigate = useNavigate();
@@ -49,6 +51,9 @@ const Register = () => {
 
     return (
         <div className="mainregister">
+            {/* <Selector options={options} onChange={(event) => {
+                alert(event.target.value)
+            }} /> */}
             <div className="registercontainer" >
                 <div className='firstDiv'></div>
 
@@ -63,8 +68,8 @@ const Register = () => {
 
                     <form className='form' onSubmit={formik.handleSubmit}>
                         <div className='textbox'>
-                            <InputC variant="standard" 
-                            placeholder={language === 'en' ? register.placeholder.email : registerHN.placeholder.email }
+                            <InputC variant="standard"
+                                placeholder={language === 'en' ? register.placeholder.email : registerHN.placeholder.email}
                                 name="email"
                                 onChange={formik.handleChange}
                                 value={formik.values.email} />
@@ -75,7 +80,7 @@ const Register = () => {
 
                         <div className='textbox' >
                             <InputC variant="standard"
-                            placeholder={language === 'en' ? register.placeholder.password : registerHN.placeholder.password }
+                                placeholder={language === 'en' ? register.placeholder.password : registerHN.placeholder.password}
                                 onChange={formik.handleChange}
                                 name="password"
                                 value={formik.values.password} />
@@ -86,7 +91,7 @@ const Register = () => {
 
                         <div className='textbox' >
                             <InputC variant="standard"
-                               placeholder={language === 'en' ? register.placeholder.confirm_password : registerHN.placeholder.confirm_password }
+                                placeholder={language === 'en' ? register.placeholder.confirm_password : registerHN.placeholder.confirm_password}
                                 onChange={formik.handleChange}
                                 name="confirm_password"
                                 value={formik.values.confirm_password} />

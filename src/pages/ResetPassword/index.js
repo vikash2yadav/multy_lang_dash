@@ -10,6 +10,9 @@ import { resetPasswordApi } from "../../Apis/users"
 import SnackBar from '../../components/SnackBar';
 import { reset } from '../../langs/en.js';
 import { resetHN } from '../../langs/hn.js';
+import {options} from '../../helper/helper'
+// import Selector from '../../components/Selector/index.js';
+ 
 
 const ResetPassword = () => {
     const navigate = useNavigate();
@@ -49,6 +52,7 @@ const ResetPassword = () => {
     };
     return (
         <div className="mainreset">
+            {/* <Selector options={options}/>  */}
             <div className="resetpasswordcontainer">
                 <div className="firstbox">
                     <h1>{language === 'en' ? reset.title : resetHN.title}</h1>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import PassInput from "../../components/PassInput";
 import { MdKey } from "react-icons/md";
 import { FaUser } from "react-icons/fa";
@@ -8,12 +8,12 @@ import SnackBar from "../../components/SnackBar";
 import { useFormik } from "formik";
 import { signInInitialValues, signInSchema } from "./Schema";
 import { signInApi } from "../../Apis/users";
-import { useNavigate } from "react-router-dom";
 import {login} from '../../langs/en.js';
 import {loginHN} from '../../langs/hn.js';
-
+import {UserAuthContext} from "../../context/authContext"
+ 
 const Login = () => {
-  const navigate = useNavigate();
+  const { loginS } = useContext(UserAuthContext);
   const [open, setOpen] = useState(false);
   const [message, setMessage] = useState(null);
   const [status, setStatus] = useState("");
@@ -23,18 +23,12 @@ const Login = () => {
     initialValues: signInInitialValues,
     validationSchema: signInSchema,
     onSubmit: async (values) => {
-      let data = await signInApi(values);
+      let data = await signInApi(values); 
       if (data.status === 200) {
         setOpen(true);
         setStatus(true);
         setMessage(data.data.message);
-        localStorage.setItem(
-          "authorization",
-          JSON.stringify(data.data.data.token)
-        );
-        setTimeout(() => {
-          navigate('/dashboard');
-        }, 1000)
+        loginS(data.data);
       } else {
         setOpen(true);
         setStatus(false);
@@ -50,8 +44,9 @@ const Login = () => {
 
     setOpen(false);
   };
-
+  
   return (
+ 
     <div className="mainlogin">
       <div className="logincontainer">
         <div className="firstDivLogin">

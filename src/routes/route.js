@@ -3,6 +3,7 @@ import ForgotPassword from "../pages/ForgotPassword";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import ResetPassword from "../pages/ResetPassword";
+import Dashboard from '../pages/Dashboard'
 
 export const routes = [
     {
@@ -38,6 +39,6 @@ export const routes = [
         displayName: "My Profile",
         link: "/dashboard",
         showOnSideBar: true,
-        component: <h1>Dashboard</h1>
-    },
+        component: <Dashboard />
+        },
 ]

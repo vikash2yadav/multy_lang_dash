@@ -9,6 +9,8 @@ import { forgotPasswordApi, checkOtpApi } from "../../Apis/users"
 import SnackBar from '../../components/SnackBar';
 import { forgot } from '../../langs/en.js';
 import { forgotHN } from '../../langs/hn.js';
+// import Selector from '../../components/Selector'
+import {options} from '../../helper/helper'
 
 const ForgotPassword = () => {
     const navigate = useNavigate();
@@ -66,6 +68,7 @@ const ForgotPassword = () => {
 
     return (
         <div className="mainforgot">
+            {/* <Selector options={options} /> */}
             <div className="forgotpasswordcontainer" >
                 <div className='firstDiv'></div>
 
